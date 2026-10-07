@@ -678,6 +678,7 @@ function buildField(field, style) {
   }
 
   if (field.type === "number") {
+    row.innerHTML = "";
     const val = document.createElement("span");
     val.className = "val";
     val.textContent = style[field.k] + (field.unit || "");
@@ -698,6 +699,7 @@ function buildField(field, style) {
     num.max = field.max;
     num.value = style[field.k];
     num.style.width = "58px";
+    num.style.flex = "none";
     num.setAttribute("aria-label", field.label + " exact value");
     num.addEventListener("change", () => {
       let v = parseInt(num.value, 10);
@@ -708,16 +710,18 @@ function buildField(field, style) {
       val.textContent = v + (field.unit || "");
       setField(field.k, v);
     });
+    const top = document.createElement("div");
+    top.className = "numtop";
+    const lab = document.createElement("label");
+    lab.textContent = field.label;
+    top.appendChild(lab);
+    top.appendChild(val);
     const box = document.createElement("div");
-    box.className = "stack";
-    box.style.flex = "1";
-    box.style.minWidth = "0";
-    box.style.flexDirection = "row";
-    box.style.gap = "6px";
-    box.style.alignItems = "center";
+    box.className = "numbox";
     box.appendChild(range);
     box.appendChild(num);
-    row.appendChild(val);
+    row.className = "row numrow";
+    row.appendChild(top);
     row.appendChild(box);
     return row;
   }
