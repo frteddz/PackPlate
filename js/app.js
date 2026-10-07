@@ -1118,7 +1118,7 @@ function openAbout() {
     "<p>PackPlate makes name cards for Minecraft texture packs. Drop in resource pack zips, edit the card, export a PNG with a transparent background and drop it into your video.</p>" +
     "<h3>Open source</h3>" +
     "<p>Free and MIT licensed. No accounts, no tracking, no network calls. Everything runs from this folder.</p>" +
-    "<p>Source code: <a href='REPO_URL' id='aboutRepo' target='_blank' rel='noopener noreferrer'>REPO_URL</a></p>" +
+    "<p>Source code: <a href='https://github.com/frteddz/PackPlate' id='aboutRepo' target='_blank' rel='noopener noreferrer'>https://github.com/frteddz/PackPlate</a></p>" +
     "<h3>Keys</h3>" +
     "<ul><li><kbd>Up</kbd> <kbd>Down</kbd> pick a card</li><li><kbd>Delete</kbd> remove the card</li></ul>" +
     "<h3>Credits</h3>" +
