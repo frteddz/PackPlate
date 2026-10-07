@@ -62,9 +62,26 @@ async function addFiles(fileList) {
     toast("Nothing to add", "Drop .zip resource packs. Font files go in the Font panel.", "bad");
     return;
   }
+  const bar = el("packProg");
+  const fill = el("packProgFill");
+  const txt = el("packProgTxt");
+  const showProg = files.length > 1;
+  if (showProg) {
+    bar.hidden = false;
+    txt.hidden = false;
+  }
+  let done = 0;
+  const tick = async () => {
+    done++;
+    if (!showProg) return;
+    fill.style.width = Math.round((done / files.length) * 100) + "%";
+    txt.textContent = "Reading pack " + done + " of " + files.length;
+    await new Promise((r) => setTimeout(r, 30));
+  };
   for (const file of files) {
     if (/\.(ttf|otf|woff2)$/i.test(file.name)) {
       await addFontFile(file);
+      await tick();
       continue;
     }
     try {
@@ -101,6 +118,12 @@ async function addFiles(fileList) {
     } catch (e) {
       toast("Could not read that pack", e.message || String(e), "bad");
     }
+    await tick();
+  }
+  if (showProg) {
+    bar.hidden = true;
+    txt.hidden = true;
+    fill.style.width = "0%";
   }
   renderList();
   buildPanels();

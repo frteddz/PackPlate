@@ -233,6 +233,28 @@ textarea {
   flex: 1;
 }
 
+.progwrap {
+  margin: 0 10px 10px;
+}
+
+.prog {
+  height: 18px;
+  background: var(--sunken);
+  border: 2px solid var(--line);
+  box-shadow: inset 2px 2px 0 #000;
+  overflow: hidden;
+}
+
+.prog .fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+}
+
+.progwrap .note {
+  margin: 4px 0 0;
+}
+
 .pack {
   display: flex;
   align-items: center;

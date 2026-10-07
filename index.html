@@ -24,7 +24,11 @@
     <div class="dropzone" id="dropzone" tabIndex="0" role="button" aria-label="Add resource pack zips">
       <span id="dzIcon"></span>
       Drop pack .zip files here
-      <span class="hint">or click to pick files</span>
+      <span class="hint">or click to pick files, several at once is fine</span>
+    </div>
+    <div class="progwrap" id="packProg" hidden>
+      <div class="prog"><div class="fill" id="packProgFill" style="width:0%"></div></div>
+      <p class="note" id="packProgTxt"></p>
     </div>
     <p class="empty" id="emptyHint" hidden>No packs yet. Drop a zip anywhere.</p>
     <ul class="packs" id="packList"></ul>
@@ -90,7 +94,7 @@
       <details>
         <summary><span id="helpHead"></span></summary>
         <div class="body">
-          <p class="note">1. Drop one or more resource pack .zip files anywhere on this page.<br>2. Click a card in the left list to edit it.<br>3. Use Export PNG for one card, or Export all as zip for every card at once.</p>
+          <p class="note">1. Drop resource pack .zip files anywhere on this page. One zip or ten at once, both work.<br>2. Click a card in the left list to edit it.<br>3. Use Export PNG for one card, or Export all as zip for every card at once.</p>
           <p class="note">Adding more zips later keeps the cards you already have.</p>
           <p class="note">Presets are saved in this browser only. Nothing is uploaded anywhere.</p>
         </div>
