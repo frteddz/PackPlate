@@ -415,7 +415,7 @@ function buildPanels() {
 
   const head = document.createElement("div");
   head.className = "col-head";
-  head.innerHTML = icon("sliders-horizontal", 18) + "<span>" + (pack ? "CARD SETTINGS" : "NO CARD SELECTED") + "</span>";
+  head.innerHTML = "<span>" + (pack ? "CARD SETTINGS" : "NO CARD SELECTED") + "</span>";
   host.appendChild(head);
 
   if (!pack) {
@@ -485,9 +485,7 @@ function buildPanels() {
     sum.innerHTML =
       '<span class="caret">' +
       icon(section.open ? "chevron-down" : "chevron-right", 16) +
-      "</span>" +
-      icon(section.iconName, 18) +
-      "<span>" +
+      "</span><span>" +
       section.title +
       "</span>";
     det.appendChild(sum);
