@@ -482,16 +482,8 @@ function buildPanels() {
     det.className = "panel";
     det.open = !!section.open;
     const sum = document.createElement("summary");
-    sum.innerHTML =
-      '<span class="caret">' +
-      icon(section.open ? "chevron-down" : "chevron-right", 16) +
-      "</span><span>" +
-      section.title +
-      "</span>";
+    sum.innerHTML = "<span>" + section.title + "</span>";
     det.appendChild(sum);
-    det.addEventListener("toggle", () => {
-      qs(".caret", sum).innerHTML = icon(det.open ? "chevron-down" : "chevron-right", 16);
-    });
     const body = document.createElement("div");
     body.className = "body";
     det.appendChild(body);
