@@ -1,4 +1,5 @@
 const BUILTIN_FONTS = [
+  { key: "Minecraft", label: "Minecraft", kind: "pixel", weights: [400] },
   { key: "Press Start 2P", label: "Press Start 2P", kind: "pixel", weights: [400] },
   { key: "Silkscreen", label: "Silkscreen", kind: "pixel", weights: [400, 700] },
   { key: "Pixelify Sans", label: "Pixelify Sans", kind: "pixel", weights: [400, 700] },
@@ -6,17 +7,30 @@ const BUILTIN_FONTS = [
   { key: "Inter", label: "Inter", kind: "clean", weights: [400, 600, 700] }
 ];
 
-const FONT_FACES = [
-  { family: "Press Start 2P", src: "url(../assets/fonts/press-start-2p-latin-400-normal.woff2)", weight: "400" },
-  { family: "Silkscreen", src: "url(../assets/fonts/silkscreen-latin-400-normal.woff2)", weight: "400" },
-  { family: "Silkscreen", src: "url(../assets/fonts/silkscreen-latin-700-normal.woff2)", weight: "700" },
-  { family: "Pixelify Sans", src: "url(../assets/fonts/pixelify-sans-latin-400-normal.woff2)", weight: "400" },
-  { family: "Pixelify Sans", src: "url(../assets/fonts/pixelify-sans-latin-700-normal.woff2)", weight: "700" },
-  { family: "VT323", src: "url(../assets/fonts/vt323-latin-400-normal.woff2)", weight: "400" },
-  { family: "Inter", src: "url(../assets/fonts/inter-latin-400-normal.woff2)", weight: "400" },
-  { family: "Inter", src: "url(../assets/fonts/inter-latin-600-normal.woff2)", weight: "600" },
-  { family: "Inter", src: "url(../assets/fonts/inter-latin-700-normal.woff2)", weight: "700" }
+const BUNDLED_FILES = [
+  { family: "Minecraft", file: "assets/fonts/minecraft-original.ttf", weight: "400" },
+  { family: "Press Start 2P", file: "assets/fonts/press-start-2p-latin-400-normal.woff2", weight: "400" },
+  { family: "Silkscreen", file: "assets/fonts/silkscreen-latin-400-normal.woff2", weight: "400" },
+  { family: "Silkscreen", file: "assets/fonts/silkscreen-latin-700-normal.woff2", weight: "700" },
+  { family: "Pixelify Sans", file: "assets/fonts/pixelify-sans-latin-400-normal.woff2", weight: "400" },
+  { family: "Pixelify Sans", file: "assets/fonts/pixelify-sans-latin-700-normal.woff2", weight: "700" },
+  { family: "VT323", file: "assets/fonts/vt323-latin-400-normal.woff2", weight: "400" },
+  { family: "Inter", file: "assets/fonts/inter-latin-400-normal.woff2", weight: "400" },
+  { family: "Inter", file: "assets/fonts/inter-latin-600-normal.woff2", weight: "600" },
+  { family: "Inter", file: "assets/fonts/inter-latin-700-normal.woff2", weight: "700" }
 ];
+
+async function loadBundledFonts() {
+  for (const f of BUNDLED_FILES) {
+    try {
+      const face = new FontFace(f.family, "url(" + f.file + ")", { weight: f.weight });
+      await face.load();
+      document.fonts.add(face);
+    } catch (e) {
+      continue;
+    }
+  }
+}
 
 const customFonts = new Map();
 let customFontSeq = 0;

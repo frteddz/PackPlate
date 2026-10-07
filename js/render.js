@@ -1,7 +1,7 @@
 const DEFAULTS = {
   name: "",
   sub: "",
-  fontKey: "Silkscreen",
+  fontKey: "Minecraft",
   fontSize: 34,
   subSize: 18,
   textColor: "#ffffff",

@@ -889,7 +889,7 @@ function renderFonts() {
       qs(".kill", row).addEventListener("click", () => {
         removeCustomFont(f.key);
         state.packs.forEach((p) => {
-          if (p.style.fontKey === f.key) p.style.fontKey = "Silkscreen";
+          if (p.style.fontKey === f.key) p.style.fontKey = "Minecraft";
         });
         renderFonts();
         buildPanels();
@@ -1036,7 +1036,12 @@ function initDrops() {
   });
 }
 
-function init() {
+async function init() {
+  try {
+    await loadBundledFonts();
+  } catch (e) {
+    toast("Fonts did not load", "The site still works with fallback fonts.", "bad");
+  }
   ["packList", "preview", "toasts", "panels", "presetList", "fontList", "cardSize", "emptyHint", "dropOverlay", "repoLink"].forEach((id) => {
     dom[id] = el(id);
   });
