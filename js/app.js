@@ -879,7 +879,7 @@ function renderFonts() {
       qs(".kill", row).addEventListener("click", () => {
         removeCustomFont(f.key);
         state.packs.forEach((p) => {
-          if (p.style.fontKey === f.key) p.style.fontKey = "Minecraft";
+          if (p.style.fontKey === f.key) p.style.fontKey = "Monocraft";
         });
         renderFonts();
         buildPanels();

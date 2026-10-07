@@ -37,7 +37,7 @@ Every change is live. Tick Apply every change to all cards to push the same look
 
 ## Fonts
 
-Six fonts are bundled: Minecraft, Press Start 2P, Silkscreen, Pixelify Sans, VT323 and Inter. No internet needed. Minecraft is the default everywhere.
+Six fonts are bundled: Monocraft, Press Start 2P, Silkscreen, Pixelify Sans, VT323 and Inter. No internet needed. Monocraft is the default everywhere.
 
 You can add your own. Click Upload font and pick a `.ttf`, `.otf` or `.woff2` file. It shows up in the font list with a sample of the actual glyphs so you can check it is the right file. The font applies to the card you have selected, or to every card if Apply every change to all cards is on.
 
@@ -81,7 +81,7 @@ PackPlate/
 ## Credits
 
 - Icons from [pixelarticons.com](https://pixelarticons.com), MIT.
-- Fonts under the SIL Open Font License: Press Start 2P, Silkscreen, Pixelify Sans, VT323, Inter.
+- Fonts under the SIL Open Font License: Monocraft, Press Start 2P, Silkscreen, Pixelify Sans, VT323, Inter.
 - [JSZip](https://stuk.github.io/jszip/) for reading and writing zips, MIT or GPL.
 
 ## Licence

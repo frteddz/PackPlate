@@ -1,5 +1,5 @@
 const BUILTIN_FONTS = [
-  { key: "Minecraft", label: "Minecraft", kind: "pixel", weights: [400] },
+  { key: "Monocraft", label: "Monocraft", kind: "pixel", weights: [400] },
   { key: "Press Start 2P", label: "Press Start 2P", kind: "pixel", weights: [400] },
   { key: "Silkscreen", label: "Silkscreen", kind: "pixel", weights: [400, 700] },
   { key: "Pixelify Sans", label: "Pixelify Sans", kind: "pixel", weights: [400, 700] },
@@ -8,7 +8,7 @@ const BUILTIN_FONTS = [
 ];
 
 const BUNDLED_FILES = [
-  { family: "Minecraft", file: "assets/fonts/minecraft-original.ttf", weight: "400" },
+  { family: "Monocraft", file: "assets/fonts/Monocraft.ttf", weight: "400" },
   { family: "Press Start 2P", file: "assets/fonts/press-start-2p-latin-400-normal.woff2", weight: "400" },
   { family: "Silkscreen", file: "assets/fonts/silkscreen-latin-400-normal.woff2", weight: "400" },
   { family: "Silkscreen", file: "assets/fonts/silkscreen-latin-700-normal.woff2", weight: "700" },

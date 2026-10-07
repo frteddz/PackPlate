@@ -13,9 +13,9 @@
   --gold: #e0a33e;
   --err: #d8574a;
   --hard: 4px;
-  --ui: "Minecraft", "Silkscreen", ui-monospace, monospace;
-  --num: "Minecraft", "VT323", ui-monospace, monospace;
-  --logo: "Minecraft", "Press Start 2P", monospace;
+  --ui: "Monocraft", "Silkscreen", ui-monospace, monospace;
+  --num: "Monocraft", "VT323", ui-monospace, monospace;
+  --logo: "Monocraft", "Press Start 2P", monospace;
 }
 
 * {
