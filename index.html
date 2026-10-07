@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PackPlate - Minecraft texture pack name cards</title>
+<meta name="description" content="Offline tool that turns Minecraft resource pack zips into transparent PNG name cards for videos.">
+<link rel="stylesheet" href="css/packplate.css">
+</head>
+<body>
+
+<header class="topbar">
+  <span class="logo" id="brandLogo"></span>
+  <span class="spacer"></span>
+  <button class="pill" id="btnAboutFoot" type="button">About</button>
+  <a class="pill" id="repoLink" href="REPO_URL" target="_blank" rel="noopener noreferrer">Open source</a>
+  <button class="pill primary" id="btnDownloadApp" type="button" data-lock>Download PackPlate</button>
+</header>
+
+<main class="app">
+
+  <section class="col left" aria-label="Packs">
+    <div class="col-head" id="leftHead"></div>
+    <div class="dropzone" id="dropzone" tabIndex="0" role="button" aria-label="Add resource pack zips">
+      <span id="dzIcon"></span>
+      Drop pack .zip files here
+      <span class="hint">or click to pick files</span>
+    </div>
+    <p class="empty" id="emptyHint" hidden>No packs yet. Drop a zip anywhere.</p>
+    <ul class="packs" id="packList"></ul>
+    <div class="toolbar">
+      <button class="pill" id="btnResetPacks" type="button" data-lock>Clear list</button>
+    </div>
+  </section>
+
+  <section class="col center" aria-label="Preview">
+    <div class="stage">
+      <div class="checker">
+        <canvas id="preview" width="480" height="160" aria-label="Card preview"></canvas>
+      </div>
+    </div>
+    <div class="toolbar">
+      <span class="label" id="cardSize">0 x 0 px</span>
+      <span class="spacer"></span>
+      <span class="label">Zoom</span>
+      <div class="seg" role="group" aria-label="Preview zoom">
+        <button type="button" id="zoomOut" aria-label="Zoom out">-</button>
+        <button type="button" id="zoomLabel" aria-label="Reset zoom">100%</button>
+        <button type="button" id="zoomIn" aria-label="Zoom in">+</button>
+      </div>
+      <span class="label">Scale</span>
+      <div class="seg" role="group" aria-label="Export scale">
+        <button type="button" data-scale="1" aria-pressed="false">1x</button>
+        <button type="button" data-scale="2" aria-pressed="true">2x</button>
+        <button type="button" data-scale="4" aria-pressed="false">4x</button>
+      </div>
+      <button class="pill" id="btnPng" type="button" data-lock>Export PNG</button>
+      <button class="pill" id="btnCopy" type="button" data-lock>Copy PNG</button>
+      <button class="pill" id="btnZip" type="button" data-lock>Export all as zip</button>
+    </div>
+    <div class="toolbar">
+      <span class="label">Full frame</span>
+      <button class="pill" id="btnFrameWide" type="button" data-lock>1920 x 1080</button>
+      <button class="pill" id="btnFrameTall" type="button" data-lock>1080 x 1920</button>
+      <span class="spacer"></span>
+      <span class="label">card sits top centre, rest transparent</span>
+    </div>
+  </section>
+
+  <section class="col right" aria-label="Edit card">
+    <div id="panels"></div>
+    <div class="panel">
+      <details open>
+        <summary><span id="presetHead"></span></summary>
+        <div class="body">
+          <button class="pill" id="btnFontPick" type="button" style="width:100%"><span id="fontPickIcon"></span><span>Upload font (.ttf .otf .woff2)</span></button>
+          <div class="fontlist" id="fontList"></div>
+        </div>
+      </details>
+    </div>
+    <div class="panel">
+      <details open>
+        <summary><span id="presetsHead"></span></summary>
+        <div class="body">
+          <div class="fontlist" id="presetList"></div>
+        </div>
+      </details>
+    </div>
+    <div class="panel">
+      <details>
+        <summary><span id="helpHead"></span></summary>
+        <div class="body">
+          <p class="note">1. Drop one or more resource pack .zip files anywhere on this page.<br>2. Click a card in the left list to edit it.<br>3. Use Export PNG for one card, or Export all as zip for every card at once.</p>
+          <p class="note">Adding more zips later keeps the cards you already have.</p>
+          <p class="note">Presets are saved in this browser only. Nothing is uploaded anywhere.</p>
+        </div>
+      </details>
+    </div>
+    <div class="panel">
+      <details>
+        <summary><span id="ossHead"></span></summary>
+        <div class="body">
+          <p class="note">PackPlate is free and open source under the MIT licence.</p>
+          <p class="note">Repo: <a id="repoLink2" href="REPO_URL" target="_blank" rel="noopener noreferrer" style="color:#4aa3d8">REPO_URL</a></p>
+          <p class="note">No accounts. No tracking. No network requests. Works from a folder on your PC.</p>
+          <button class="pill" id="btnDownloadApp2" type="button" data-lock>Download PackPlate</button>
+        </div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<div class="modal-wrap" id="dropOverlay" hidden>
+  <div class="modal" style="text-align:center">
+    <h2 id="dropHead"></h2>
+    <div class="body"><p class="note">Release the files to add them.</p></div>
+  </div>
+</div>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="js/vendor/jszip.min.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/fonts.js"></script>
+<script src="js/pack.js"></script>
+<script src="js/render.js"></script>
+<script src="js/presets.js"></script>
+<script src="js/bundle.js"></script>
+<script src="js/selfpack.js"></script>
+<script src="js/app.js"></script>
+<script src="js/ui-icons.js"></script>
+</body>
+</html>
